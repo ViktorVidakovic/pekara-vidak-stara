@@ -32,7 +32,7 @@
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                   <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
+                                    <li class="nav-item">
                                         <a class="nav-link" href="#">Početna</a>
                                     </li>
                                     <li class="nav-item">
@@ -45,7 +45,7 @@
                                         <a class="nav-link" href="#kontakt">Kontakt</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" target="_blank" href="https://viktorvidakovic.github.io/portfolio/">O autoru</a>
+                                        <a class="nav-link" href="#o-autoru">O autoru</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -62,7 +62,7 @@
                 <div class="offset-1 offset-xl-4 col-10 col-xl-4 vv-welcome-message text-center vv-cover-block px-0 mt-5">
                     <h1 class="pt-sm-5 pt-md-3 pt-xl-4 pt-xl-2 py-4">Pekara Vidak</h1>
                 </div>
-                <div class="single-item offset-0 offset-md-3 pl-2 col-12 col-md-6 row">
+                <div class="offset-0 offset-xl-3 pl-5 col-12 col-xl-6 row">
                         <div id="slide-1" class="col-12 vv-slider vv-d-block px-0 fade">
                             <img src="assets/img/slider1.png" alt="Ovo je prva slika u okviru slajdera"/>
                         </div>
@@ -117,7 +117,7 @@
                 </section>
             </article>
             <article id="podrucje-rada">
-                <h2 id="pogledajte-l"  class="text-center vv-header-color">Područje rada</h2>
+                <h2 class="text-center vv-header-color">Područje rada</h2>
                 <div class="d-flex justify-content-center mb-3">
                     <span class="line"></span>
                 </div>
@@ -150,8 +150,8 @@
                     </article>
                 </section>
             </article>
-            <article>
-                <h2 id="o-nama" class="text-center vv-header-color mt-5">O nama</h2>
+            <article id="o-nama">
+                <h2 class="text-center vv-header-color mt-5">O nama</h2>
                 <div class="d-flex justify-content-center">
                     <span class="line"></span>
                 </div>
@@ -182,7 +182,7 @@
                                 <div class="px-2 px-xl-5 px-md-2 d-flex flex-column justify-content-center align-items-center d-none">
                                     <h3 class="vv-h3 mt-3">Naša vizija</h3>
                                     <p class="vv-fs-22 mb-3">Vizija organizacije je da „Pekara Vidak“ bude sinonim za kvalitetnu i ukusnu hranu. </p>
-                                    <p class="vv-fs-22">Takođe, želimo da imamo lidersku poziciju na tržištu i da stalnim rastom broja objekata bude dostupna što većem broju stanovništva, a podizanjem kvaliteta i standarda poveća lojalnost kupaca.</p>
+                                    <p class="vv-fs-22">Takođe, želimo da imamo lidersku poziciju na tržištu i da stalnim rastom broja objekata budemo dostupni što većem broju stanovništva, a podizanjem kvaliteta i standarda poveća lojalnost kupaca.</p>
                                 </div>
                             </div>
                             <div id="vizija-desc2" class="col-12 col-xl-6 row row-cols-1 d-xl-none d-block mx-0 pb-4">
@@ -197,8 +197,8 @@
                     <article class="offset-2"></article>
                 </section>
             </article>
-            <article>
-                <h2 id="u-ponudi" class="text-center vv-header-color">Izdvajamo</h2>
+            <article id="u-ponudi">
+                <h2 class="text-center vv-header-color">Izdvajamo</h2>
                 <div class="d-flex justify-content-center mb-3">
                     <span class="line"></span>
                 </div>
@@ -212,7 +212,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>30 RSD/kom</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg">Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -224,7 +224,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>80 RSD/100 gr.</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" >Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -236,7 +236,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>100 RSD/100 gr.</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" >Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -248,7 +248,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>40 RSD/kom</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" >Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -264,7 +264,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>100 RSD/parče</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" >Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -276,7 +276,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>120 RSD/parče</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" >Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -288,7 +288,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>140 RSD/parče</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg">Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -300,7 +300,7 @@
                                     <div class="ponuda-btn">
                                         <div class="d-flex align-items-center price row mx-0">
                                             <button type="button" class="vv-fw-700 ponuda-fs btn-lg vv-br-0 col-sm-8 col-12 text-center px-0 mr-0 tx-b" disabled>150 RSD/parče</button>
-                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" >Poruči</button>
+                                            <button type="button" class="btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg" onclick="poruci()">Poruči</button>
                                         </div>
                                     </div>
                                 </section>
@@ -310,8 +310,8 @@
 
                 </section>
             </article>
-            <article>
-                <h2 id="u-ponudi" class="text-center vv-header-color mt-5">Poručite ovde</h2>
+            <article id="kontakt">
+                <h2 class="text-center vv-header-color mt-5">Poručite ovde</h2>
                 <div class="d-flex justify-content-center mb-3">
                     <span class="line"></span>
                 </div>
@@ -325,46 +325,58 @@
                             <form action="#kontakt">
                                 <div id="poljeImePrezime" class="form-group row px-5">
                                     <label class="col-12 px-0" for="imePrezime">Ime i prezime:</label>
-                                    <input class="col-12 py-1 vv-br-025" type="text" name="imePrezime" id="imePrezime" placeholder="Marko Marković" class="form-control"/>
+                                    <input class="col-12 py-1 vv-br-025" type="text" name="imePrezime" id="imePrezime" placeholder="Marko Marković"/>
+                                    <p></p>
                                 </div>
                                 <div id="poljeAdresa" class="form-group row px-5">
                                     <label class="col-12 px-0" for="adresa">Adresa:</label>
-                                    <input class="col-12 py-1 vv-br-025" type="text" name="adresa" id="adresa" placeholder="Zdravka Čelara 16" class="form-control"/>
+                                    <input class="col-12 py-1 vv-br-025" type="text" name="adresa" id="adresa" placeholder="Zdravka Čelara 16"/>
+                                    <p></p>
                                 </div>
-                                <div class="form-group row px-5">
-                                    <label class="col-8 px-0" for="grad">Grad:</label>
-                                    <label class="col-4 px-0" for="posBroj">Poš. broj:</label>
-                                    <input class="col-7 py-1 vv-br-025" type="text" name="grad" id="grad" placeholder="Beograd" class="form-control"/>
-                                    <span class="offset-1"></span>
-                                    <input class="col-4 py-1 vv-br-025" type="text" name="posBroj" id="posBroj" placeholder="11000"class="form-control"/>
+                                <div class="col-12 form-group row px-5">
+                                    <div id="poljeGrad" class="col-6 row">
+                                        <label class="px-0 col-12" for="grad">Grad:</label>
+                                        <input class="col-12 mt-1 py-1 vv-br-025" type="text" name="grad" id="grad" placeholder="Beograd"/>
+                                        <p class="col-12"></p>
+                                    </div>
+                                    <div id="poljePosBroj" class="col-6">
+                                        <label class="px-0 col-12" for="posBroj">Poš. broj:</label>
+                                        <input class="py-1 col-12 vv-br-025" type="text" name="posBroj" id="posBroj" placeholder="11060"/>
+                                        <p class="col-12"></p>
+                                    </div>
                                 </div>
-                                <div class="col-12 px-5">
+                                <div id="izbor" class="col-12 px-5">
                                     <label for="ponuda">Odaberite proizvod:</label>
                                     <select id="ponuda" class="form-control">
-                                    <option selected>Izaberite...</option>
-                                    <option>Krofne</option>
-                                    <option>Mini-pice</option>
-                                    <option>Kiflice sa viršlama</option>
-                                    <option>Hleb</option>
-                                    <option>Margarita</option>
-                                    <option>Capriciosa</option>
-                                    <option>Quattro Stagioni</option>
-                                    <option>Vegeteriana</option>
+                                    <option value = "0">Izaberite...</option>
+                                    <option value = "kr">Krofne</option>
+                                    <option value = "mi">Mini-pice</option>
+                                    <option value = "ki">Kiflice sa viršlama</option>
+                                    <option value = "hl">Hleb</option>
+                                    <option value = "ma">Margarita</option>
+                                    <option value = "ca">Capriciosa</option>
+                                    <option value = "qu">Quattro Stagioni</option>
+                                    <option value = "ve">Vegeteriana</option>
                                     </select>
+                                    <p></p>
                                 </div>
-                                <div class="form-group row px-0 mt-4">
+                                <div id="nacinPreuzimanja" class="form-group row px-0 mt-4">
                                     <div class="form-check offset-2 col-4 ">
-                                        <input class="form-check-input" type="radio" name="radio1" value="P">
+                                        <input class="form-check-input" type="radio" name="nacinPreuzimanja" value="P">
                                         <label class="form-check-label" for="preuzimanje">
                                             Lično preuzimanje
                                         </label>
                                     </div>
                                     <div class="form-check col-4">
-                                        <input class="form-check-input" type="radio" name="radio1" value="D">
+                                        <input class="form-check-input" type="radio" name="nacinPreuzimanja" value="D">
                                         <label class="form-check-label" for="dostava">
                                             Dostava
                                         </label>
                                     </div>
+                                    <div class="col-12 row">
+                                        <span class="offset-3"></span>
+                                        <p class="col-9"></p>
+                                    </div>  
                                 </div>
 
                                 <div class="form-group row px-5">
@@ -377,67 +389,12 @@
                                 </div>
                             </form>
                             <div id="ispis"></div>
-<!--STARA FORMA-->
-                            <!-- <form action="#kontakt">
-                                <div class="row vv-br-0">
-                                  <div id="poljeImePrezime" class="form-group col-12">
-                                    <label for="imePrezime">Ime i Prezime:</label>
-                                    <input type="text" class="form-control" id="imePrezime">
-                                    <p></p>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-12">
-                                    <label for="adresa">Adresa:</label>
-                                    <input type="text"  class="form-control" id="adresa">
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <label for="grad">Grad:</label>
-                                        <input type="text"  class="form-control" id="grad">
-                                    </div>
-                                    <div class="col-4 px-0">
-                                        <label for="grad">Poš. broj:</label>
-                                        <input type="text"  class="form-control" id="grad">
-                                    </div>
-                                </div>
-                                <div class="col-12 px-0">
-                                    <label for="odaberite">Odaberite proizvod:</label>
-                                    <select id="odaberite" class="form-control">
-                                      <option selected>Izaberite...</option>
-                                      <option>Krofne</option>
-                                      <option>Mini-pice</option>
-                                      <option>Kiflice sa viršlama</option>
-                                      <option>Hleb</option>
-                                      <option>Margarita</option>
-                                      <option>Capriciosa</option>
-                                      <option>Quattro Stagioni</option>
-                                      <option>Vegeteriana</option>
-                                    </select>
-                                  </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="radio1" id="preuzimanje">
-                                    <label class="form-check-label" for="preuzimanje">
-                                    Preuzimanje
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="radio1" id="dostava" checked>
-                                    <label class="form-check-label" for="dostava">
-                                    Dostava
-                                    </label>
-                                </div>
-                                <button type="submit" id="btnPosalji" class="btn-secondary btn-bg text-white mb-5 mt-2 px-2 py-1" onclick="proveri()">Pošalji</button>
-                              </form>
-                        </div> -->
                         </div>
-
                     </div>
                 </div>
             </article>
-            <article class="ponuda-cover">
-                <h2 id="o-autoru" class="text-center vv-header-color mt-4">O autoru</h2>
+            <article id="o-autoru" class="ponuda-cover">
+                <h2 class="text-center vv-header-color mt-4">O autoru</h2>
                 <div class="d-flex justify-content-center">
                     <span class="line"></span>
                 </div>
@@ -491,26 +448,29 @@
                                 <article id="links" class="col-12 col-sm-6 px-0 py-3">
                                     <h3>Linkovi:</h3>
                                     <ul class="navbar-nav">
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#"><i class="fas fa-angle-right"></i>&nbsp;Početna</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/letovanje.html"><i class="fas fa-angle-right"></i>&nbsp;Letovanje</a>
+                                            <a class="nav-link" href="#o-nama"><i class="fas fa-angle-right"></i>&nbsp;O nama</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/vodimo-racuna.html"><i class="fas fa-angle-right"></i>&nbsp;vodimo-racuna</a>
+                                            <a class="nav-link" href="#u-ponudi"><i class="fas fa-angle-right"></i>&nbsp;U ponudi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/kontakt.html"><i class="fas fa-angle-right"></i>&nbsp;Kontakt</a>
+                                            <a class="nav-link" href="#kontakt"><i class="fas fa-angle-right"></i>&nbsp;Kontakt</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" target="_blank" href="https://viktorvidakovic.github.io/portfolio/"><i class="fas fa-angle-right"></i>&nbsp;O autoru</a>
+                                            <a class="nav-link" href="#o-autoru"><i class="fas fa-angle-right"></i>&nbsp;O autoru</a>
                                         </li>
                                     </ul>
                                 </article>
                                 <article class="col-12 col-sm-6 px-0 py-3">
                                     <h3>Fajlovi:</h3>
                                     <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" target="_blank" href="assets/js/main.js"><i class="fas fa-angle-right"></i>&nbsp;JavaScript</a>
+                                        </li>
                                         <li class="nav-item">
                                             <a class="nav-link" target="_blank" href="assets/css/style.css"><i class="fas fa-angle-right"></i>&nbsp;CSS</a>
                                         </li>
@@ -548,7 +508,7 @@
                                                     <a class="nav-link d-flex align-items-center" target="_blank" href="https://www.facebook.com/channel/PekaraVidak/"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp;Pekara Vidak</a>
                                                 </li>
                                                 <li class="nav-item mt-2 h-47">
-                                                    <a class="nav-link d-flex align-items-center" target="_blank" href="https://www.linkedin.com/in/pekara_vidak/"><i class="fab fa-linkedin"></i>&nbsp;&nbsp;Pekara Vidak</a>
+                                                    <a class="nav-link d-flex align-items-center" target="_blank" href="https://www.youtube.com/in/pekara_vidak/"><i class="fab fa-youtube"></i>&nbsp;&nbsp;Pekara Vidak</a>
                                                 </li>
                                             </ul>
                                         </div>
