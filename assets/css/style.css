@@ -44,6 +44,10 @@ p{
 #desc-block p{
     font-size: 26px;
 }
+.vv-br-025{
+    border-radius: 0.25rem;
+    border:none;
+}
 button{
     transition: .7s;
 }
@@ -116,6 +120,15 @@ a,p,.vv-welcome, #desc-block p,h2,h3{
 .vv-bg-white{
     background-color: #E9E9E9;
     border-top: 3px var(--border) solid;
+}
+.vv-btn-grey{
+    background-color: #82898f;
+    transition: .7s;
+}
+.vv-btn-grey:hover{
+    background-color: #d6d6d6;
+    transition: .7s;
+    color: var(--headers-color);
 }
 .vv-header-color{
     color: var(--underline-color);

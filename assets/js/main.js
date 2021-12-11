@@ -1,7 +1,9 @@
+//Slajder
 var timer;
 var slajdIndeks = 1;
 clearTimeout(timer);
 timer = setTimeout(() => plusSlides(1), 3000);
+
 function plusSlides(n) {
   showSlides(slajdIndeks += n);
 }
@@ -18,24 +20,57 @@ function showSlides(n) {
   slajd[slajdIndeks-1].style.display = "block";
   timer = setTimeout(() => plusSlides(1), 3000);
 }
+console.log("Provera slajdera");
 
-//Obrada forme
-function proveri(){
-  var imePrezime;
-  var vrImePrezime;
-  imePrezime = document.querySelector("#imePrezime");
-  vrImePrezime = imePrezime.value;
-  //Proveri ime i prezime
-  let regImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
-  if(regImePrezime.test(vrImePrezime)){
-    document.querySelector("#polje-ime-prezime > p").innerHTML = "Uspešno ste uneli ime i prezime";
-    document.querySelector("#polje-ime-prezime > p").style.color = "green";
+//Forma -GLEDATI MILENU
+document.querySelector("#btnPosalji").addEventListener("click",provera());
+
+function provera(){
+  var objImePrezime, objAdresa, objGrad, objPosBroj, objPonuda, objRadio, nizUspesno,nizGreske;
+  objImePrezime = document.querySelector("#imePrezime");
+  objAdresa = document.querySelector("#adresa");
+  objGrad = document.querySelector("#grad");
+  objPosBroj = document.querySelector("#posBroj");
+  objPonuda = document.querySelector("#ponuda");
+  objRadio = document.getElementsByName("radio1");
+  nizUspesno = [];
+  nizGreske = [];
+
+  // Provera imePrezime
+  if(objImePrezime.value.length < 4){
+    nizGreske.push("Pogrešno popunjeno polje za ime i prezime.");
   }
   else{
-    document.querySelector("#polje-ime-prezime > p").innerHTML = "Neuspešno uneto ime i prezime";
-    document.querySelector("#polje-ime-prezime > p").style.color = "red";
+    nizUspesno.push(objImePrezime.value);
   }
+
+  // Provera adresa
+  if(objAdresa.value.length < 4){
+    nizGreske.push("Pogrešno popunjeno polje za ime i prezime.");
+  }
+  else{
+    nizUspesno.push(objImePrezime.value);
+  }
+
 }
+//Obrada forme
+// function proveri(){
+//   var imePrezime;
+//   var vrImePrezime;
+//   imePrezime = document.querySelector("#imePrezime");
+//   vrImePrezime = imePrezime.value;
+//   //Proveri ime i prezime
+//   let regImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
+//   if(regImePrezime.test(vrImePrezime)){
+//     document.querySelector("#polje-ime-prezime > p").innerHTML = "Uspešno ste uneli ime i prezime";
+//     document.querySelector("#polje-ime-prezime > p").style.color = "green";
+//   }
+//   else{
+//     document.querySelector("#polje-ime-prezime > p").innerHTML = "Pogrešno uneto ime i prezime";
+//     document.querySelector("#polje-ime-prezime > p").style.color = "red";
+//   }
+// }
+
 
 
 

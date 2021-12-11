@@ -62,17 +62,17 @@
                 <div class="offset-1 offset-xl-4 col-10 col-xl-4 vv-welcome-message text-center vv-cover-block px-0 mt-5">
                     <h1 class="pt-sm-5 pt-md-3 pt-xl-4 pt-xl-2 py-4">Pekara Vidak</h1>
                 </div>
-                <div class="single-item offset-0 offset-md-3 col-12 col-md-6 row">
-                        <div id="slide-1" class="col-12 px-0 vv-slider vv-d-block px-0 fade">
+                <div class="single-item offset-0 offset-md-3 pl-2 col-12 col-md-6 row">
+                        <div id="slide-1" class="col-12 vv-slider vv-d-block px-0 fade">
                             <img src="assets/img/slider1.png" alt="Ovo je prva slika u okviru slajdera"/>
                         </div>
-                        <div id="slide-2" class="vv-slider mx-0 offset-3 col-12 fade">
+                        <div id="slide-2" class="vv-slider mx-0 pl-1 offset-3 col-12 fade">
                             <img src="assets/img/slider2.png" alt="Ovo je druga slika u okviru slajdera"/>
                         </div>
-                        <div id="slide-3" class="vv-slider mx-0 offset-3 col-12 fade">
+                        <div id="slide-3" class="vv-slider mx-0 pl-1 offset-3 col-12 fade">
                             <img src="assets/img/slider3.png" alt="Ovo je treca slika u okviru slajdera"/>
                         </div>
-                        <div id="slide-4" class="vv-slider mx-0 offset-3 col-12 fade">
+                        <div id="slide-4" class="vv-slider mx-0 pl-1 offset-3 col-12 fade">
                             <img src="assets/img/slider4.png" alt="Ovo je cetvrta slika u okviru slajdera"/>
                         </div>
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -203,7 +203,6 @@
                     <span class="line"></span>
                 </div>
                 <section class="ponuda-cover" class="py-4">
-                    <!-- Peciva -->
                     <article id="u-ponudi-peciva" class="row mx-1 mt-3 d-flex justify-content-center">
                         <section class="offset-0 col-12 row">
                             <article class="col-12 col-md-6 col-xl-3 mb-xl-0 mb-3">
@@ -256,7 +255,6 @@
                             </article>
                         </section>
                     </article>
-                    <!-- Pice -->
                     <article id="u-ponudi-peciva" class="row mx-1 mt-3 d-flex justify-content-center">
                         <section class="col-12 row">
                             <article class="col-12 col-md-6 col-xl-3 mb-xl-0 mb-3">
@@ -323,40 +321,62 @@
                             <div id="gif" class="vv-bg-image px-0">
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 d-flex align-items-center bg-orange">
-                            <form action="">
-                                <div class="form-group row px-5">
+                        <div class="col-12 col-lg-6 py-3 d-flex align-items-center bg-orange">
+                            <form action="#kontakt">
+                                <div id="poljeImePrezime" class="form-group row px-5">
                                     <label class="col-12 px-0" for="imePrezime">Ime i prezime:</label>
-                                    <input class="col-12" type="text" name="imePrezime" id="form-control"/>
+                                    <input class="col-12 py-1 vv-br-025" type="text" name="imePrezime" id="imePrezime" placeholder="Marko Marković" class="form-control"/>
+                                </div>
+                                <div id="poljeAdresa" class="form-group row px-5">
+                                    <label class="col-12 px-0" for="adresa">Adresa:</label>
+                                    <input class="col-12 py-1 vv-br-025" type="text" name="adresa" id="adresa" placeholder="Zdravka Čelara 16" class="form-control"/>
                                 </div>
                                 <div class="form-group row px-5">
-                                    <label class="col-12 px-0" for="email">Adresa:</label>
-                                    <input class="col-12" type="text" name="adresa" id="form-control"/>
-                                </div>
-                                <div class="form-group row px-5">
-                                    <label class="col-8 px-0" for="email">Grad:</label>
-                                    <label class="col-4 px-0" for="email">Poš. broj:</label>
-                                    <input class="col-7" type="text" name="grad" id="form-control"/>
+                                    <label class="col-8 px-0" for="grad">Grad:</label>
+                                    <label class="col-4 px-0" for="posBroj">Poš. broj:</label>
+                                    <input class="col-7 py-1 vv-br-025" type="text" name="grad" id="grad" placeholder="Beograd" class="form-control"/>
                                     <span class="offset-1"></span>
-                                    <input class="col-4" type="text" name="grad" id="form-control"/>
+                                    <input class="col-4 py-1 vv-br-025" type="text" name="posBroj" id="posBroj" placeholder="11000"class="form-control"/>
                                 </div>
-
-                                <div class="form-group row px-0">
+                                <div class="col-12 px-5">
+                                    <label for="ponuda">Odaberite proizvod:</label>
+                                    <select id="ponuda" class="form-control">
+                                    <option selected>Izaberite...</option>
+                                    <option>Krofne</option>
+                                    <option>Mini-pice</option>
+                                    <option>Kiflice sa viršlama</option>
+                                    <option>Hleb</option>
+                                    <option>Margarita</option>
+                                    <option>Capriciosa</option>
+                                    <option>Quattro Stagioni</option>
+                                    <option>Vegeteriana</option>
+                                    </select>
+                                </div>
+                                <div class="form-group row px-0 mt-4">
                                     <div class="form-check offset-2 col-4 ">
-                                        <input class="form-check-input" type="radio" name="radio1" id="preuzimanje" value="option1" checked>
+                                        <input class="form-check-input" type="radio" name="radio1" value="P">
                                         <label class="form-check-label" for="preuzimanje">
                                             Lično preuzimanje
                                         </label>
                                     </div>
                                     <div class="form-check col-4">
-                                        <input class="form-check-input" type="radio" name="radio1" id="dostava" value="option2">
+                                        <input class="form-check-input" type="radio" name="radio1" value="D">
                                         <label class="form-check-label" for="dostava">
                                             Dostava
                                         </label>
                                     </div>
                                 </div>
-                                
+
+                                <div class="form-group row px-5">
+                                    <div class="col-12">
+
+                                    </div>
+                                </div>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="button" id="btnPosalji" value="Pošalji" class="btn vv-br-025 vv-btn-grey" onclick="provera()">
+                                </div>
                             </form>
+                            <div id="ispis"></div>
 <!--STARA FORMA-->
                             <!-- <form action="#kontakt">
                                 <div class="row vv-br-0">
@@ -428,14 +448,14 @@
                             </div>
                             <div id="o-autoru-desc" class="col-12 col-xl-6 mt-3 row row-cols-1 d-xl-block d-none mx-0">
                                 <div class="px-2 px-xl-5 px-md-2 d-flex flex-column justify-content-center align-items-center d-none">
-                                    <p class="vv-fs-22 mb-3">Zovem se Viktor Vidaković. Nedavno sam završio tehničku školu „Mileta Nikolić“ u Aranđelovcu, Srbija. Počeo sam da studiram informacione tehnologije i veb programiranje na Visokoj školi ICT.</p>
-                                    <p class="vv-fs-22">Programiranje mi je od početka bilo veoma fascinantno, jer imamo mogućnost da uradimo mnogo aplikacija i programa kako bi nekome olakšali život. Rekao bih da moram mnogo da istražujem da bih bio spreman za veće izazove, ali se nadam da ću u budućnosti naučiti mnogo toga.</p>
+                                    <p class="vv-fs-22 mb-3">Zovem se Viktor Vidaković. Nedavno sam završio tehničku školu „Mileta Nikolić“ u Aranđelovcu. Počeo sam da studiram informacione tehnologije i veb programiranje na Visokoj školi ICT.</p>
+                                    <p class="vv-fs-22">Programiranje mi je od početka bilo veoma fascinantno, jer imamo mogućnost da kreiramo mnogo solucija i programa kako bismo nekome olakšali život. Rekao bih da moram mnogo da istražujem da bih bio spreman za veće izazove, ali se nadam da ću u budućnosti naučiti mnogo toga.</p>
                                 </div>
                             </div>
                             <div id="o-autoru-desc2" class="col-12 col-xl-6 row row-cols-1 d-xl-none d-block mx-0 pb-4">
                                 <div class="px-2 px-xl-5 px-md-2 mx-md-5 my-md-4 d-flex flex-column justify-content-center align-items-center">
-                                    <p class="vv-fs-22 mb-3">Zovem se Viktor Vidaković. Nedavno sam završio tehničku školu „Mileta Nikolić“ u Aranđelovcu, Srbija. Počeo sam da studiram informacione tehnologije i veb programiranje na Visokoj školi ICT.</p>
-                                    <p class="vv-fs-22">Programiranje mi je od početka bilo veoma fascinantno, jer imamo mogućnost da uradimo mnogo aplikacija i programa kako bi nekome olakšali život. Rekao bih da moram mnogo da istražujem da bih bio spreman za veće izazove, ali se nadam da ću u budućnosti naučiti mnogo toga.</p>
+                                    <p class="vv-fs-22 mb-3">Zovem se Viktor Vidaković. Nedavno sam završio tehničku školu „Mileta Nikolić“ u Aranđelovcu. Počeo sam da studiram informacione tehnologije i veb programiranje na Visokoj školi ICT.</p>
+                                    <p class="vv-fs-22">Programiranje mi je od početka bilo veoma fascinantno, jer imamo mogućnost da kreiramo mnogo solucija i programa kako bismo nekome olakšali život. Rekao bih da moram mnogo da istražujem da bih bio spreman za veće izazove, ali se nadam da ću u budućnosti naučiti mnogo toga.</p>
                                 </div>
                             </div>
                         </section>
