@@ -301,6 +301,12 @@ footer .nav-link{
 .vv-header-bg{
     background-color: var(--menu-color) !important;
 }
+#scrollJq{
+    height: 108px;
+}
+#logo2{
+    display:none;
+}
 .vv-cover-block{
     background-color: var(--vv-cover-block) !important;   
 }
@@ -408,8 +414,6 @@ footer .nav-link{
 .bg-orange{
     background-color: #db7d45;
 }
-
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -424,8 +428,6 @@ footer .nav-link{
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 0 3px 3px 0;

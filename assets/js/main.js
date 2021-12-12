@@ -1,3 +1,17 @@
+//Navbar
+$(window).on("scroll", function () {
+  var scrollTop = $(window).scrollTop();
+  if (scrollTop > 20) {
+    $("#scrollJq").stop().animate({height: "75px"},100);
+    $("#logo1").css({display:"none"},100); 
+    $("#logo2").css({display:"block"},100); 
+  }
+  else {
+    $("#scrollJq").stop().animate({height: "108px"},100);
+    $("#logo1").css({display:"block"},100);
+    $("#logo2").css({display:"none"},100);
+  }
+});
 
 //Slajder
 var timer;
@@ -58,24 +72,35 @@ function provera(){
     document.querySelector("#poljeImePrezime > p").style.color = "white";
     document.querySelector("#poljeImePrezime > p").style.fontSize = "14px";
   }
+  else{
+    document.querySelector("#poljeImePrezime > p").innerHTML = "";
+  }
 
   //Proveri adresu
   let regAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
   let regAdresa2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
-  if(!(regAdresa.test(vrAdresa)) || !(regAdresa2.test(vrAdresa))){
+  if((regAdresa.test(vrAdresa)) || (regAdresa2.test(vrAdresa))){
+    document.querySelector("#poljeAdresa > p").innerHTML = "";
+  }
+  else{
     document.querySelector("#poljeAdresa > p").innerHTML = "Pogrešno uneta adresa";
     document.querySelector("#poljeAdresa > p").style.color = "white";
     document.querySelector("#poljeAdresa > p").style.fontSize = "14px";
   }
 
+
   //Proveri grad
   let regGrad=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   let regGrad2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{0,1}[a-zčćšđž]{2,15}$/;
-  if(!(regGrad.test(vrGrad)) || !(regGrad2.test(vrGrad))){
-    document.querySelector("#poljeGrad > p").innerHTML = "Pogrešno uneta opština";
+  if((regGrad.test(vrGrad)) || (regGrad2.test(vrGrad))){
+    document.querySelector("#poljeGrad > p").innerHTML = "";
+  }
+  else{
+    document.querySelector("#poljeGrad > p").innerHTML = "Pogrešno unet grad";
     document.querySelector("#poljeGrad > p").style.color = "white";
     document.querySelector("#poljeGrad > p").style.fontSize = "14px";
   }
+
 
   //Proveri postanski broj
   let regPosBroj=/^[0-9]{5}$/;
@@ -84,13 +109,21 @@ function provera(){
     document.querySelector("#poljePosBroj > p").style.color = "white";
     document.querySelector("#poljePosBroj > p").style.fontSize = "14px";
   }
+  else{
+    document.querySelector("#poljePosBroj > p").innerHTML = "";
+  }
 
+  
   //Provera padajuce 
   if(ponuda.options[ponuda.options.selectedIndex].value=="0"){
     document.querySelector("#izbor > p").innerHTML="Morate izabrati proizvod";
     document.querySelector("#izbor > p").style.color="white";
     document.querySelector("#izbor > p").style.fontSize = "14px";
   }
+  else{
+    document.querySelector("#izbor > p").innerHTML = "";
+  }
+
 
   //Provera radio button-a
   var vrNacinPreuzimanja=" ";
@@ -104,6 +137,9 @@ function provera(){
     document.querySelector("#nacinPreuzimanja > div > p").innerHTML="Morate izabrati nacin isporuke";
     document.querySelector("#nacinPreuzimanja > div > p").style.color="white";
     document.querySelector("#nacinPreuzimanja > div > p").style.fontSize = "14px";
+  }
+  else{
+    document.querySelector("#nacinPreuzimanja > div > p").innerHTML = "";
   }
 }
 var nizPonuda = [
