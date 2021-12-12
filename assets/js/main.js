@@ -106,3 +106,38 @@ function provera(){
     document.querySelector("#nacinPreuzimanja > div > p").style.fontSize = "14px";
   }
 }
+var nizPonuda = [
+  "kr","mi","ki","hl","ma","ca","qu","ve" 
+];
+function kr(){
+  let kr = document.getElementById("kr");
+  kr.setAttribute("selected", "");
+}
+function mi(){
+  let mi = document.getElementById("mi");
+  mi.setAttribute("selected", "");
+}
+function ki(){
+  let ki = document.getElementById("ki");
+  ki.setAttribute("selected", "");
+}
+function hl(){
+  let hl = document.getElementById("hl");
+  hl.setAttribute("selected", "");
+}
+function ma(){
+  let ma = document.getElementById("ma");
+  ma.setAttribute("selected", "");
+}
+function ca(){
+  let ca = document.getElementById("ca");
+  ca.setAttribute("selected", "");
+}
+function qu(){
+  let qu = document.getElementById("qu");
+  qu.setAttribute("selected", "");
+}
+function ve(){
+  let ve = document.getElementById("ve");
+  ve.setAttribute("selected", "");
+}
