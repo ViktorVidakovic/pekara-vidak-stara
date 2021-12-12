@@ -109,35 +109,156 @@ function provera(){
 var nizPonuda = [
   "kr","mi","ki","hl","ma","ca","qu","ve" 
 ];
+
 function kr(){
-  let kr = document.getElementById("kr");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   kr.setAttribute("selected", "");
 }
 function mi(){
-  let mi = document.getElementById("mi");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  kr.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   mi.setAttribute("selected", "");
 }
 function ki(){
-  let ki = document.getElementById("ki");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  kr.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   ki.setAttribute("selected", "");
 }
 function hl(){
-  let hl = document.getElementById("hl");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  kr.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   hl.setAttribute("selected", "");
 }
 function ma(){
-  let ma = document.getElementById("ma");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  kr.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   ma.setAttribute("selected", "");
 }
 function ca(){
-  let ca = document.getElementById("ca");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  kr.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   ca.setAttribute("selected", "");
 }
 function qu(){
-  let qu = document.getElementById("qu");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  kr.removeAttribute("selected", "");
+  ve.removeAttribute("selected", "");
   qu.setAttribute("selected", "");
 }
 function ve(){
-  let ve = document.getElementById("ve");
+  var kr = document.getElementById("kr");
+  var mi = document.getElementById("mi");
+  var ki = document.getElementById("ki");
+  var hl = document.getElementById("hl");
+  var ma = document.getElementById("ma");
+  var ca = document.getElementById("ca");
+  var qu = document.getElementById("qu");
+  var ve = document.getElementById("ve");
+
+  mi.removeAttribute("selected", "");
+  ki.removeAttribute("selected", "");
+  hl.removeAttribute("selected", "");
+  ma.removeAttribute("selected", "");
+  ca.removeAttribute("selected", "");
+  qu.removeAttribute("selected", "");
+  kr.removeAttribute("selected", "");
   ve.setAttribute("selected", "");
 }
