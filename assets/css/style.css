@@ -93,23 +93,8 @@ a,p,.vv-welcome, #desc-block p,h2,h3{
 .vv-fs-22{
     font-size: 22px;
 }
-.vv-slider{
-    display: none;
-}
-.vv-d-block{
-    display: block;
-}
-#slider-1{
-    background-image:url('../img/slider1.png');
-}
-#slider-2{
-    background-image:url('../img/slider2.png');
-}
-#slider-3{
-    background-image:url('../img/slider3.png');
-}
-#slider-4{
-    background-image:url('../img/slider4.png');
+#carousel{
+    overflow-y: hidden;
 }
 .vv-navbar{
     background-color: var(--menu-color);
@@ -159,11 +144,11 @@ a,p,.vv-welcome, #desc-block p,h2,h3{
     color:var(--dark-font-color);
     transition-duration:.7s;
 }
-#main{
+main{
     background-color: var(--back-color);
     box-shadow: inset 0px 0px 92px 24px var(--drop-shadow);
 }
-#main h3{
+main h3{
     color:var(--str-back-color);
     margin-bottom: 3px;
     font-size:32px;
@@ -258,6 +243,9 @@ footer .nav-link{
 #links i{
     font-size: 16px;
 }
+#files i{
+    font-size: 16px;
+}
 #footer-social i{
     font-size: 42px;
 }
@@ -300,12 +288,6 @@ footer .nav-link{
 }
 .vv-header-bg{
     background-color: var(--menu-color) !important;
-}
-#scrollJq{
-    height: 108px;
-}
-#logo2{
-    display:none;
 }
 .vv-cover-block{
     background-color: var(--vv-cover-block) !important;   
@@ -407,13 +389,15 @@ footer .nav-link{
     background-image: url('../img/pic.gif');
     height: 450px;
 }
-#contact{
+#kontakt-sekcija{
     background-color: #ffffff;
     border: #adadad 10px groove;
 }
 .bg-orange{
     background-color: #db7d45;
 }
+
+/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -428,6 +412,8 @@ footer .nav-link{
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
+
+/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 0 3px 3px 0;
