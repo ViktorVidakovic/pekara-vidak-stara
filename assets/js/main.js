@@ -1,3 +1,4 @@
+console.log("Provera");
 //#region Kreiranje header-a u HTML-u
 var meni = document.getElementById("meni");
 
@@ -69,6 +70,12 @@ for(let i=0; i<nazivOblasti.length; i++)
 navSvojstva.appendChild(neuredjenaLista);
 
 meni.appendChild(meniSvojstva1);
+
+$(document).ready(function(){
+  $('.navbar-toggler').click(function(){
+    $('')
+  })
+});
 //#endregion
 
 //#region Kreiranje slider-a u HTML-u
@@ -430,6 +437,7 @@ uPonudiPeciva.appendChild(uPonudiPecivaSvojstva1);
 
 var pecivaPonuda = ["Krofne","Mini-pice","Kiflice sa viršlama","Hleb"];
 var cenaPeciva = ["30 RSD/kom","80 RSD/100 gr.","100 RSD/100 gr.","40 RSD/kom"];
+var pecivaId = ["\"kr\"","\"mi\"","\"ki\"","\"hl\""];
 for(let i=0;i<pecivaPonuda.length;i++)
 {
   var uPonudiPecivaSvojstva2 = document.createElement("article");
@@ -469,8 +477,8 @@ for(let i=0;i<pecivaPonuda.length;i++)
 
   var ponudaBtnPoruci = document.createElement("button");
   ponudaBtnPoruci.type = ("button");
-  ponudaBtnPoruci.setAttribute("class","btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg");
-  ponudaBtnPoruci.setAttribute("onclick","poruci()");
+  ponudaBtnPoruci.setAttribute("class","btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center px-0 mr-0 btn-bg");
+  ponudaBtnPoruci.setAttribute("onclick",`poruci(${pecivaId[i]})`);
   ponudaBtnSvojstva.appendChild(ponudaBtnPoruci);
   
   var aPoruci = document.createElement("a");
@@ -491,6 +499,7 @@ uPonudiPizza.appendChild(uPonudiPizzaSvojstva1);
 
 var pizzaPonuda = ["Margarita","Capriciosa","Quattro Stagioni","Vegeteriana"];
 var cenaPizza = ["100 RSD/parče","120 RSD/parče","140 RSD/parče","150 RSD/parče"];
+var pizzeId = ["\"ma\"","\"ca\"","\"qu\"","\"ve\""];
 for(let i=0;i<pizzaPonuda.length;i++)
 {
   var uPonudiPizzaSvojstva2 = document.createElement("article");
@@ -530,8 +539,8 @@ for(let i=0;i<pizzaPonuda.length;i++)
 
   var ponudaBtnPoruci2 = document.createElement("button");
   ponudaBtnPoruci2.type = ("button");
-  ponudaBtnPoruci2.setAttribute("class","btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center text-uppercase px-0 mr-0 btn-bg");
-  ponudaBtnPoruci2.setAttribute("onclick","poruci()");
+  ponudaBtnPoruci2.setAttribute("class","btn-secondary vv-br-0 btn-lg col-sm-4 col-12 text-uppercase text-center px-0 mr-0 btn-bg");
+  ponudaBtnPoruci2.setAttribute("onclick",`poruci(${pizzeId[i]})`);
   ponudaBtnSvojstva2.appendChild(ponudaBtnPoruci2);
   
   var aPoruci2 = document.createElement("a");
@@ -584,7 +593,6 @@ kontaktSvojstvo.appendChild(kontaktFormaSekcija);
 var kontaktForma = document.createElement("form");
 kontaktForma.action = ("#kontakt");
 kontaktFormaSekcija.appendChild(kontaktForma);
-
 var poljeFormaIdIA = ["poljeImePrezime","poljeAdresa"];
 var formaIdIA = ["imePrezime","adresa"];
 var labelTekstIA = ["Ime i prezime:","Adresa:"];
@@ -712,7 +720,6 @@ for(let i=0;i<opcije.length;i++)
   var opcija = document.createElement("option");
   opcija.setAttribute("id",`${opcije[i]}`);
   opcija.value = (`${opcije[i]}`);
-  opcija.setAttribute("onclick", "provera()");
   selectPonuda.appendChild(opcija);
   var opcijaTekst = document.createTextNode(`${opcijeTekst[i]}`);
   opcija.appendChild(opcijaTekst);
@@ -765,8 +772,10 @@ pTagP.setAttribute("class","col-12");
 pTagPBlok.appendChild(pTagP);
 
 var posaljiBlok = document.createElement("div");
+posaljiBlok.setAttribute("onclick","provera()");
 posaljiBlok.setAttribute("class","form-group d-flex justify-content-center");
 kontaktForma.appendChild(posaljiBlok);
+
 
 var posaljiButton = document.createElement("input");
 posaljiButton.setAttribute("id","btnPosalji");
@@ -1054,12 +1063,12 @@ function provera(){
   //Provera imena i prezimena
   let regImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   if(!(regImePrezime.test(vrImePrezime))){
-    var x = document.querySelector("#poljeImePrezime > p").innerHTML = "Pogrešno uneto ime i prezime";
+    document.querySelector("#poljeImePrezime > p").innerHTML = "Pogrešno uneto ime i prezime";
     document.querySelector("#poljeImePrezime > p").style.color = "white";
     document.querySelector("#poljeImePrezime > p").style.fontSize = "14px";
   }
   else{
-    var x = document.querySelector("#poljeImePrezime > p").innerHTML = "";
+    document.querySelector("#poljeImePrezime > p").innerHTML = "";
   }
 
   //Provera adrese
@@ -1139,21 +1148,31 @@ function provera(){
 //#endregion
 
 //#region Dropdown - Poruci dugme
+var kr = document.getElementById("kr");
+var mi = document.getElementById("mi");
+var ki = document.getElementById("ki");
+var hl = document.getElementById("hl");
+var ma = document.getElementById("ma");
+var ca = document.getElementById("ca");
+var qu = document.getElementById("qu");
+var ve = document.getElementById("ve");
 var nizPonuda = ["kr","mi","ki","hl","ma","ca","qu","ve"];
-function poruci(){
+function poruci(string){
   for(let i = 0; i<nizPonuda.length;i++){
-    var poruciProizvod = document.getElementById(`${nizPonuda[i]}`);
+    let poruciProizvod = document.getElementById(`${nizPonuda[i]}`);
     poruciProizvod.removeAttribute("selected", "");
   }
-  for(let i = 0; i<nizPonuda.length;i++){
-    if(poruciProizvod == kr)kr.setAttribute("selected", "");
-    else if(poruciProizvod == mi)mi.setAttribute("selected", "");
-    else if(poruciProizvod == ki)ki.setAttribute("selected", "");
-    else if(poruciProizvod == hl)hl.setAttribute("selected", "");
-    else if(poruciProizvod == ma)ma.setAttribute("selected", "");
-    else if(poruciProizvod == ca)ca.setAttribute("selected", "");
-    else if(poruciProizvod == qu)qu.setAttribute("selected", "");
-    else if(poruciProizvod == ve)ve.setAttribute("selected", "");
+  for(let i = 0; i<nizPonuda.length;i++)
+  {
+    let poruciProizvod = document.getElementById(string);
+    if(poruciProizvod == kr)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == mi)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == ki)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == hl)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == ma)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == ca)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == qu)return poruciProizvod.setAttribute("selected", "");
+    else if(poruciProizvod == ve)return poruciProizvod.setAttribute("selected", "");
   }
 }
 //#endregion

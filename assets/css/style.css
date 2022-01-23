@@ -98,7 +98,7 @@ a,p,.vv-welcome, #desc-block p,h2,h3{
 }
 .vv-navbar{
     background-color: var(--menu-color);
-    height: 104px !important;
+    height: 95px !important;
     z-index: 4 !important;
     padding: 0 !important;
 }
