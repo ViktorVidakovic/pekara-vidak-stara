@@ -1045,14 +1045,22 @@ function provera(){
   vrAdresa = adresa.value;
 
   var grad;
+  var grad2;
   var vrGrad;
+  var vrGrad2;
   grad = document.querySelector("#grad");
+  grad2 = document.querySelector("#grad2");
   vrGrad = grad.value;
+  vrGrad2 = grad2.value;
 
   var posBroj;
+  var posBroj2;
   var vrPosBroj;
+  var vrPosBroj2;
   posBroj = document.querySelector("#posBroj");
+  posBroj2 = document.querySelector("#posBroj2");
   vrPosBroj = posBroj.value;
+  vrPosBroj2 = posBroj2.value;
 
   var ponuda;
   ponuda = document.querySelector("#ponuda");
@@ -1068,14 +1076,16 @@ function provera(){
     document.querySelector("#poljeImePrezime > p").style.fontSize = "14px";
   }
   else{
-    document.querySelector("#poljeImePrezime > p").innerHTML = "";
+    document.querySelector("#poljeImePrezime > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#poljeImePrezime > p").style.color = "#62c94d";
   }
 
   //Provera adrese
   let regAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
   let regAdresa2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
   if((regAdresa.test(vrAdresa)) || (regAdresa2.test(vrAdresa))){
-    document.querySelector("#poljeAdresa > p").innerHTML = "";
+    document.querySelector("#poljeAdresa > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#poljeAdresa > p").style.color = "#62c94d";
   }
   else{
     document.querySelector("#poljeAdresa > p").innerHTML = "Pogrešno uneta adresa";
@@ -1087,9 +1097,11 @@ function provera(){
   //Provera grada
   let regGrad=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   let regGrad2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{0,1}[a-zčćšđž]{2,15}$/;
-  if((regGrad.test(vrGrad)) || (regGrad2.test(vrGrad))){
-    document.querySelector("#poljeGrad > p").innerHTML = "";
-    document.querySelector("#poljeGrad2 > p").innerHTML = "";
+  if((regGrad.test(vrGrad)) || (regGrad2.test(vrGrad)) || (regGrad.test(vrGrad2)) || (regGrad2.test(vrGrad2))){
+    document.querySelector("#poljeGrad > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#poljeGrad > p").style.color = "#62c94d";
+    document.querySelector("#poljeGrad2 > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#poljeGrad2 > p").style.color = "#62c94d";
   }
   else{
     document.querySelector("#poljeGrad > p").innerHTML = "Pogrešno unet grad";
@@ -1103,17 +1115,20 @@ function provera(){
 
   //Provera postanskog broja
   let regPosBroj=/^[0-9]{5}$/;
-  if(!(regPosBroj.test(vrPosBroj))){
+  if((regPosBroj.test(vrPosBroj)) || (regPosBroj.test(vrPosBroj2))){
+    document.querySelector("#poljePosBroj > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#poljePosBroj2 > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#poljePosBroj > p").style.color = "#62c94d";
+    document.querySelector("#poljePosBroj2 > p").style.color = "#62c94d";
+  }
+  else{
     document.querySelector("#poljePosBroj > p").innerHTML = "Pogrešno unet poš. broj";
     document.querySelector("#poljePosBroj > p").style.color = "white";
     document.querySelector("#poljePosBroj > p").style.fontSize = "14px";
     document.querySelector("#poljePosBroj2 > p").innerHTML = "Pogrešno unet poš. broj";
     document.querySelector("#poljePosBroj2 > p").style.color = "white";
     document.querySelector("#poljePosBroj2 > p").style.fontSize = "14px";
-  }
-  else{
-    document.querySelector("#poljePosBroj > p").innerHTML = "";
-    document.querySelector("#poljePosBroj2 > p").innerHTML = "";
+
   }
 
   
@@ -1124,7 +1139,8 @@ function provera(){
     document.querySelector("#izbor > p").style.fontSize = "14px";
   }
   else{
-    document.querySelector("#izbor > p").innerHTML = "";
+    document.querySelector("#izbor > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#izbor > p").style.color = "#62c94d";
   }
 
 
