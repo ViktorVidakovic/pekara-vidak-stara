@@ -70,12 +70,6 @@ for(let i=0; i<nazivOblasti.length; i++)
 navSvojstva.appendChild(neuredjenaLista);
 
 meni.appendChild(meniSvojstva1);
-
-$(document).ready(function(){
-  $('.navbar-toggler').click(function(){
-    $('')
-  })
-});
 //#endregion
 
 //#region Kreiranje slider-a u HTML-u
@@ -730,7 +724,7 @@ izbor.appendChild(pTagI);
 
 var preuzimanje = document.createElement("div");
 preuzimanje.setAttribute("id","nacinPreuzimanja");
-preuzimanje.setAttribute("class","form-group row px-0 mt-4");
+preuzimanje.setAttribute("class","form-group row px-0 mt-4 mb-0");
 kontaktForma.appendChild(preuzimanje);
 
 var preuzimanjeOffset = document.createElement("div");
@@ -770,6 +764,34 @@ preuzimanje.appendChild(pTagPBlok);
 var pTagP = document.createElement("p");
 pTagP.setAttribute("class","col-12");
 pTagPBlok.appendChild(pTagP);
+
+var novaPonudaBlok = document.createElement("div");
+novaPonudaBlok.setAttribute("class","form-group row px-0");
+kontaktForma.appendChild(novaPonudaBlok);
+
+var novaPonudaBlokOffset = document.createElement("div");
+novaPonudaBlokOffset.setAttribute("class","offset-1");
+novaPonudaBlok.appendChild(novaPonudaBlokOffset);
+
+var novaPonuda = document.createElement("div");
+novaPonuda.setAttribute("class","form-check col-11");
+novaPonudaBlok.appendChild(novaPonuda);
+
+var novaPonudaInput = document.createElement("input");
+novaPonudaInput.setAttribute("class","form-check-input");
+novaPonudaInput.setAttribute("id","novaPonuda");
+novaPonudaInput.type = "checkbox";
+novaPonudaInput.name = "novaPonuda";
+novaPonudaInput.value = "novaPonuda";
+novaPonuda.appendChild(novaPonudaInput);
+
+var novaPonudaLabel = document.createElement("label");
+novaPonudaLabel.setAttribute("class","form-check-label");
+novaPonudaLabel.setAttribute("for","novaPonuda");
+novaPonuda.appendChild(novaPonudaLabel);
+
+var novaPonudaLabelText = document.createTextNode("Želim da budem obaveštenen o novim proizvodima i akcijama.");
+novaPonudaLabel.appendChild(novaPonudaLabelText);
 
 var posaljiBlok = document.createElement("div");
 posaljiBlok.setAttribute("onclick","provera()");
@@ -1158,7 +1180,8 @@ function provera(){
     document.querySelector("#nacinPreuzimanja > div > p").style.fontSize = "14px";
   }
   else{
-    document.querySelector("#nacinPreuzimanja > div > p").innerHTML = "";
+    document.querySelector("#nacinPreuzimanja > div > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
+    document.querySelector("#nacinPreuzimanja > div > p").style.color = "#62c94d";
   }
 }
 //#endregion
