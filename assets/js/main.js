@@ -1,4 +1,148 @@
 console.log("Provera");
+//#region Forma - provera
+function provera(){
+  var brojGresaka = 0;
+
+  var imePrezime;
+  var vrImePrezime;
+  imePrezime = document.querySelector("#imePrezime");
+  vrImePrezime = imePrezime.value;
+
+  var adresa;
+  var vrAdresa;
+  adresa = document.querySelector("#adresa");
+  vrAdresa = adresa.value;
+
+  var grad;
+  var grad2;
+  var vrGrad;
+  var vrGrad2;
+  grad = document.querySelector("#grad");
+  grad2 = document.querySelector("#grad2");
+  vrGrad = grad.value;
+  vrGrad2 = grad2.value;
+
+  var posBroj;
+  var posBroj2;
+  var vrPosBroj;
+  var vrPosBroj2;
+  posBroj = document.querySelector("#posBroj");
+  posBroj2 = document.querySelector("#posBroj2");
+  vrPosBroj = posBroj.value;
+  vrPosBroj2 = posBroj2.value;
+
+  var ponuda;
+  ponuda = document.querySelector("#ponuda");
+
+  var nacinPreuzimanja;
+  nacinPreuzimanja=document.getElementsByName("nacinPreuzimanja");
+
+  //Provera imena i prezimena
+  let regImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
+  if(!(regImePrezime.test(vrImePrezime))){
+    document.querySelector("#poljeImePrezime > p").innerHTML = "Pogrešno uneto ime i prezime";
+    document.querySelector("#poljeImePrezime > p").style.color = "white";
+    document.querySelector("#poljeImePrezime > p").style.fontSize = "14px";
+    brojGresaka++;
+  }
+  else{
+    document.querySelector("#poljeImePrezime > p").innerHTML=" ";
+  }
+
+  //Provera adrese
+  let regAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
+  let regAdresa2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
+  if((regAdresa.test(vrAdresa)) || (regAdresa2.test(vrAdresa))){
+    document.querySelector("#poljeAdresa > p").innerHTML=" ";
+  }
+  else{
+    document.querySelector("#poljeAdresa > p").innerHTML = "Pogrešno uneta adresa";
+    document.querySelector("#poljeAdresa > p").style.color = "white";
+    document.querySelector("#poljeAdresa > p").style.fontSize = "14px";
+    brojGresaka++;
+  }
+
+
+  //Provera grada
+  let regGrad=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
+  let regGrad2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{0,1}[a-zčćšđž]{2,15}$/;
+  if((regGrad.test(vrGrad)) || (regGrad2.test(vrGrad)) || (regGrad.test(vrGrad2)) || (regGrad2.test(vrGrad2))){
+    document.querySelector("#poljeGrad > p").innerHTML=" ";
+    document.querySelector("#poljeGrad2 > p").innerHTML=" ";
+  }
+  else{
+    document.querySelector("#poljeGrad > p").innerHTML = "Pogrešno unet grad";
+    document.querySelector("#poljeGrad > p").style.color = "white";
+    document.querySelector("#poljeGrad > p").style.fontSize = "14px";
+    brojGresaka++;
+    document.querySelector("#poljeGrad2 > p").innerHTML = "Pogrešno unet grad";
+    document.querySelector("#poljeGrad2 > p").style.color = "white";
+    document.querySelector("#poljeGrad2 > p").style.fontSize = "14px";
+    brojGresaka++;
+  }
+
+
+  //Provera postanskog broja
+  let regPosBroj=/^[0-9]{5}$/;
+  if((regPosBroj.test(vrPosBroj)) || (regPosBroj.test(vrPosBroj2))){
+    document.querySelector("#poljePosBroj > p").innerHTML = "";
+    document.querySelector("#poljePosBroj2 > p").innerHTML = "";
+  }
+  else{
+    document.querySelector("#poljePosBroj > p").innerHTML = "Pogrešno unet poš. broj";
+    document.querySelector("#poljePosBroj > p").style.color = "white";
+    document.querySelector("#poljePosBroj > p").style.fontSize = "14px";
+    brojGresaka++;
+    document.querySelector("#poljePosBroj2 > p").innerHTML = "Pogrešno unet poš. broj";
+    document.querySelector("#poljePosBroj2 > p").style.color = "white";
+    document.querySelector("#poljePosBroj2 > p").style.fontSize = "14px";
+    brojGresaka++;
+  }
+
+  
+  //Provera padajuce liste
+  if(ponuda.options[ponuda.options.selectedIndex].value=="0"){
+    document.querySelector("#izbor > p").innerHTML="Morate izabrati proizvod";
+    document.querySelector("#izbor > p").style.color="white";
+    document.querySelector("#izbor > p").style.fontSize = "14px";
+    brojGresaka++;
+  }
+  else{
+    document.querySelector("#izbor > p").innerHTML = "";
+  }
+
+  //Provera radio button-a
+  var vrNacinPreuzimanja=" ";
+  for(let i=0;i<nacinPreuzimanja.length;i++){
+    if(nacinPreuzimanja[i].checked){
+      vrNacinPreuzimanja=nacinPreuzimanja[i].value;
+      break;
+    }
+  }
+  if(vrNacinPreuzimanja==" "){
+    document.querySelector("#nacinPreuzimanja > div > p").innerHTML="Morate izabrati nacin isporuke";
+    document.querySelector("#nacinPreuzimanja > div > p").style.color="white";
+    document.querySelector("#nacinPreuzimanja > div > p").style.fontSize = "14px";
+    brojGresaka++;
+  }
+  else{
+    document.querySelector("#nacinPreuzimanja > div > p").innerHTML="";
+  }
+  
+  var alertIspis = "";
+  if(novaPonudaInput.checked){
+    alertIspis = "Hvala Vam što ste se prijavili na naš newsletter!";
+  }
+
+  $(document).ready(function(){
+    if(brojGresaka==0){
+      alert("Uspešno ste izvršili porudžbinu.\n" + `${alertIspis}`);
+    }
+  });
+}
+//#endregion
+
+
 //#region Kreiranje header-a u HTML-u
 var meni = document.getElementById("meni");
 
@@ -587,6 +731,7 @@ kontaktSvojstvo.appendChild(kontaktFormaSekcija);
 var kontaktForma = document.createElement("form");
 kontaktForma.action = ("#kontakt");
 kontaktFormaSekcija.appendChild(kontaktForma);
+
 var poljeFormaIdIA = ["poljeImePrezime","poljeAdresa"];
 var formaIdIA = ["imePrezime","adresa"];
 var labelTekstIA = ["Ime i prezime:","Adresa:"];
@@ -790,7 +935,7 @@ novaPonudaLabel.setAttribute("class","form-check-label");
 novaPonudaLabel.setAttribute("for","novaPonuda");
 novaPonuda.appendChild(novaPonudaLabel);
 
-var novaPonudaLabelText = document.createTextNode("Želim da budem obaveštenen o novim proizvodima i akcijama.");
+var novaPonudaLabelText = document.createTextNode("Želim da budem obavešten o novim proizvodima i akcijama.");
 novaPonudaLabel.appendChild(novaPonudaLabelText);
 
 var posaljiBlok = document.createElement("div");
@@ -1052,138 +1197,6 @@ var footerBottomP = document.createElement("p");
 var footerBottomPTekst = document.createTextNode("\u00a9Pekara Vidak 2021. Sva prava zadržana");
 footerBottomP.appendChild(footerBottomPTekst);
 footerBottom.appendChild(footerBottomP);
-//#endregion
-
-//#region Forma - provera
-function provera(){
-  var imePrezime;
-  var vrImePrezime;
-  imePrezime = document.querySelector("#imePrezime");
-  vrImePrezime = imePrezime.value;
-
-  var adresa;
-  var vrAdresa;
-  adresa = document.querySelector("#adresa");
-  vrAdresa = adresa.value;
-
-  var grad;
-  var grad2;
-  var vrGrad;
-  var vrGrad2;
-  grad = document.querySelector("#grad");
-  grad2 = document.querySelector("#grad2");
-  vrGrad = grad.value;
-  vrGrad2 = grad2.value;
-
-  var posBroj;
-  var posBroj2;
-  var vrPosBroj;
-  var vrPosBroj2;
-  posBroj = document.querySelector("#posBroj");
-  posBroj2 = document.querySelector("#posBroj2");
-  vrPosBroj = posBroj.value;
-  vrPosBroj2 = posBroj2.value;
-
-  var ponuda;
-  ponuda = document.querySelector("#ponuda");
-
-  var nacinPreuzimanja;
-  nacinPreuzimanja=document.getElementsByName("nacinPreuzimanja");
-
-  //Provera imena i prezimena
-  let regImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
-  if(!(regImePrezime.test(vrImePrezime))){
-    document.querySelector("#poljeImePrezime > p").innerHTML = "Pogrešno uneto ime i prezime";
-    document.querySelector("#poljeImePrezime > p").style.color = "white";
-    document.querySelector("#poljeImePrezime > p").style.fontSize = "14px";
-  }
-  else{
-    document.querySelector("#poljeImePrezime > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#poljeImePrezime > p").style.color = "#62c94d";
-  }
-
-  //Provera adrese
-  let regAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
-  let regAdresa2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[0-9]{1,4}$/;
-  if((regAdresa.test(vrAdresa)) || (regAdresa2.test(vrAdresa))){
-    document.querySelector("#poljeAdresa > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#poljeAdresa > p").style.color = "#62c94d";
-  }
-  else{
-    document.querySelector("#poljeAdresa > p").innerHTML = "Pogrešno uneta adresa";
-    document.querySelector("#poljeAdresa > p").style.color = "white";
-    document.querySelector("#poljeAdresa > p").style.fontSize = "14px";
-  }
-
-
-  //Provera grada
-  let regGrad=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
-  let regGrad2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{0,1}[a-zčćšđž]{2,15}$/;
-  if((regGrad.test(vrGrad)) || (regGrad2.test(vrGrad)) || (regGrad.test(vrGrad2)) || (regGrad2.test(vrGrad2))){
-    document.querySelector("#poljeGrad > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#poljeGrad > p").style.color = "#62c94d";
-    document.querySelector("#poljeGrad2 > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#poljeGrad2 > p").style.color = "#62c94d";
-  }
-  else{
-    document.querySelector("#poljeGrad > p").innerHTML = "Pogrešno unet grad";
-    document.querySelector("#poljeGrad > p").style.color = "white";
-    document.querySelector("#poljeGrad > p").style.fontSize = "14px";
-    document.querySelector("#poljeGrad2 > p").innerHTML = "Pogrešno unet grad";
-    document.querySelector("#poljeGrad2 > p").style.color = "white";
-    document.querySelector("#poljeGrad2 > p").style.fontSize = "14px";
-  }
-
-
-  //Provera postanskog broja
-  let regPosBroj=/^[0-9]{5}$/;
-  if((regPosBroj.test(vrPosBroj)) || (regPosBroj.test(vrPosBroj2))){
-    document.querySelector("#poljePosBroj > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#poljePosBroj2 > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#poljePosBroj > p").style.color = "#62c94d";
-    document.querySelector("#poljePosBroj2 > p").style.color = "#62c94d";
-  }
-  else{
-    document.querySelector("#poljePosBroj > p").innerHTML = "Pogrešno unet poš. broj";
-    document.querySelector("#poljePosBroj > p").style.color = "white";
-    document.querySelector("#poljePosBroj > p").style.fontSize = "14px";
-    document.querySelector("#poljePosBroj2 > p").innerHTML = "Pogrešno unet poš. broj";
-    document.querySelector("#poljePosBroj2 > p").style.color = "white";
-    document.querySelector("#poljePosBroj2 > p").style.fontSize = "14px";
-
-  }
-
-  
-  //Provera padajuce liste
-  if(ponuda.options[ponuda.options.selectedIndex].value=="0"){
-    document.querySelector("#izbor > p").innerHTML="Morate izabrati proizvod";
-    document.querySelector("#izbor > p").style.color="white";
-    document.querySelector("#izbor > p").style.fontSize = "14px";
-  }
-  else{
-    document.querySelector("#izbor > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#izbor > p").style.color = "#62c94d";
-  }
-
-
-  //Provera radio button-a
-  var vrNacinPreuzimanja=" ";
-  for(let i=0;i<nacinPreuzimanja.length;i++){
-    if(nacinPreuzimanja[i].checked){
-      vrNacinPreuzimanja=nacinPreuzimanja[i].value;
-      break;
-    }
-  }
-  if(vrNacinPreuzimanja==" "){
-    document.querySelector("#nacinPreuzimanja > div > p").innerHTML="Morate izabrati nacin isporuke";
-    document.querySelector("#nacinPreuzimanja > div > p").style.color="white";
-    document.querySelector("#nacinPreuzimanja > div > p").style.fontSize = "14px";
-  }
-  else{
-    document.querySelector("#nacinPreuzimanja > div > p").innerHTML = "&nbsp;&nbsp;<i class=\"fas fa-check\"></i>";
-    document.querySelector("#nacinPreuzimanja > div > p").style.color = "#62c94d";
-  }
-}
 //#endregion
 
 //#region Dropdown - Poruci dugme
